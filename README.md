@@ -1,1 +1,1 @@
-IMGD4000 Portfolio Assignment
+## Alex Hunt
