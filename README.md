@@ -73,7 +73,7 @@ Unlike ground movement, flight is not controlled by WASD. In flight, the player 
 After successfully implementing player movement, my next development hurdle was to implement a dialogue system from scratch. Without any experience in widget development, I wasn't sure what to do, but my research helped guide me to implement a simple, functional dialogue system. 
 
 I started by creating an interface "Interactable" for every interactable object to inherit. It holds one simple method: **Interact.** This allowed the player to only have one interaction implementation for multiple types of objects, such as NPCs and quest objects (in this game, plane parts.) I then created a widget for the dialogue box, with a text box bound to a variable **DialogueText.**
-![dialogue widget](https://github.com/alexmhunt/cartograbirdportfolio/blob/master/dialoguewindow.PNG)
+![dialogue widget](https://github.com/alexmhunt/cartograbirdportfolio/blob/master/dialoguewindow.PNG?raw=true)
 
 NPC implemented Interactable, and such is able to receive events whenever the player interacts with it. Below, the NPC calls **Dialogue Create** to open up a dialogue menu whenever the player interacts with it.
 ![dialogue create 1](https://github.com/alexmhunt/cartograbirdportfolio/blob/master/dialoguecreate.PNG?raw=true)
