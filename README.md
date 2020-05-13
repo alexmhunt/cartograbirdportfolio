@@ -75,8 +75,7 @@ After successfully implementing player movement, my next development hurdle was 
 I started by creating an interface "Interactable" for every interactable object to inherit. It holds one simple method: **Interact.** This allowed the player to only have one interaction implementation for multiple types of objects, such as NPCs and quest objects (in this game, plane parts.) I then created a widget for the dialogue box, with a text box bound to a variable **DialogueText.**
 ![dialogue widget](https://github.com/alexmhunt/cartograbirdportfolio/blob/master/dialoguewindow.PNG)
 
-Below, I implemented NPC interaction. NPC implemented Interactable, and such is able to receive events whenever the player interacts with it. The Blueprints code checks to see if the player is at the appropriate quest stage and has collected all plane parts. If so, it advances quest progression, but regardless, the NPC opens up a dialogue menu.
-![interact](https://github.com/alexmhunt/cartograbirdportfolio/blob/master/interact.PNG?raw=true)
+NPC implemented Interactable, and such is able to receive events whenever the player interacts with it. Below, the NPC calls **Dialogue Create** to open up a dialogue menu whenever the player interacts with it.
 ![dialogue create 1](https://github.com/alexmhunt/cartograbirdportfolio/blob/master/dialoguecreate.PNG?raw=true)
 ![dialogue create 2](https://github.com/alexmhunt/cartograbirdportfolio/blob/master/dialoguecreateend.PNG?raw=true)
 
