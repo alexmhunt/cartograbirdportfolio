@@ -24,7 +24,7 @@ The following graph shows the architecture of Cartograbird, as well as the divis
 # And we have liftoff!
 When I first laid my hands on this project, I was admittedly intimidated. I thought that I would have to program a whole flight physics system from scratch. Such is possible in Unreal, but as I worked on defining the player character's movement behavior, I found that Unreal had an existing movement API: the [CharacterMovementComponent](https://docs.unrealengine.com/en-US/API/Runtime/Engine/GameFramework/UCharacterMovementComponent/index.html). 
 
-For a seven-week scope project, this API was a godsend. Instead of learning physics on the fly, I could focus more on the feel of the character movement controls and on the camera dynamics. Below is all the code I needed to get the player character off the ground:
+For a seven-week scope project, this API was a godsend. Instead of learning detailed physics on the fly, I was able to focus more on the feel of the character movement controls and on the camera dynamics. Below is all the code I needed to get the player character off the ground:
 
 ```c++
 // Toggles flight mode on/off when ToggleFlight key pressed
@@ -51,4 +51,4 @@ void ACarmenCharacter::OnFlightModeStart(){
 
 # Mr. Wiki, I don't feel so good...
 My initial intent was to implement all of my functionality in C++. However, in an unfortunate turn of events, the Unreal C++ Wiki was deleted at the start of the project, leaving sparse online resources for C++ at best. Though I did not abandon C++ entirely, I ended up coding camera movement functionality and some flight movement using Blueprints.
-Looking back, I believe it was beneficial that I got experience in both scripting languages. Sometimes, for exercise, I wrote the same code functionality in both. Seeing Blueprints' flowchart-like visuals helped me better understand how my code worked.
+Looking back, I believe it was beneficial that I got experience in both scripting languages. They both have their uses: C++ for its performance and greater level of control, and Blueprints for its speedy compile time, visual nature, and user interface functionality.
