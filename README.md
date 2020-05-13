@@ -53,7 +53,7 @@ void ACarmenCharacter::OnFlightModeStart(){
 
 ```
 
-# Movement and Camera
+# Movement
 I implemented the player character's ground movement entirely in C++. In the below code, when the player wants to move forward or backward, I find out which direction is "forward" for the player and tell the player character's CharacterMovementComponent to move in that direction by however much the input binding specifies (positive values will move forward, negative values will move backward).
 ```c++
 // Handles forward and backward movement.
@@ -69,9 +69,22 @@ void ACarmenCharacter::MoveForward(float amount){
 Unlike ground movement, flight is not controlled by WASD. In flight, the player character automatically moves forward at a set speed, which the player can either increase or decrease by holding down the Space or Shift keys, as shown in the following Blueprints code. As long as the flight speed hasn't hit the minimum or maximum value, the player's flight speed either speeds up or slows down depending on input.
 ![Speed change code](https://github.com/alexmhunt/cartograbirdportfolio/raw/master/speedcode.PNG)
 
-
-
 # Story and Dialogue
+After successfully implementing player movement, my next development hurdle was to implement a dialogue system from scratch. Without any experience in widget development, I wasn't sure what to do, but my research helped guide me to implement a simple, functional dialogue system. 
+
+I started by creating an interface "Interactable" for every interactable object to inherit. It holds one simple method: **Interact.** This allowed the player to only have one interaction implementation for multiple types of objects, such as NPCs and quest objects (in this game, plane parts.) I then created a widget for the dialogue box, with a text box bound to a variable **DialogueText.**
+[dialogue widget]
+
+Below, I implemented NPC interaction. NPC implemented Interactable, and such is able to receive events whenever the player interacts with it. The Blueprints code checks to see if the player is at the appropriate quest stage and has collected all plane parts. If so, it advances quest progression, but regardless, the NPC opens up a dialogue menu.
+[interact]
+[dialogue create 1 & 2]
+
+
+The dialogue lines themselves are imported from a .csv file, which is then translated to a struct that the NPC can read in **Get Line.**
+[csv]
+[get line]
+
+I do creative writing as a hobby, and have a great passion for story, so I was excited to get my hands on implementing the game's story. Even if it was simple, I still gained valuable experience in dialogue implementation and in Blueprints scripting for widgets.
 
 # Git: Friend or Foe?
 This was my first experience in Unreal, and so my first experience with version control in Unreal. My group chose to use Git through Gitlab, due to its open-source nature and our previous experience with Git. Initially, we had little trouble, but when we happened to edit the same Blueprints files, we felt the wrath of Git merge conflicts. Git most likely isn't used to dealing with .uasset files and visual code like this, so sometimes, whenever I merged another developer's branch into my work, my Blueprints would get corrupted and I would risk losing my work. In fact, I did have to redo certain aspects of my Blueprints code a few times.
