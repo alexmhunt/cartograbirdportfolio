@@ -16,8 +16,9 @@ When I first laid my hands on this project, I was admittedly intimidated. I thou
 For a seven-week scope project, this API was a godsend. Instead of learning physics on the fly, I could focus more on the feel of the character movement controls and on the camera dynamics. Below is all the code I needed to get the player character off the ground:
 
 ```c++
+// Toggles flight mode on/off when ToggleFlight key pressed
 void ACarmenCharacter::ToggleFlight(){
-	if(!isFlying)
+	if(!isFlying) // #define isFlying (Movement->MovementMode == MOVE_Flying)
 		OnFlightModeStart();
 	else
 		OnFlightModeStop();
@@ -25,7 +26,8 @@ void ACarmenCharacter::ToggleFlight(){
 
 // Handles entering flight mode
 void ACarmenCharacter::OnFlightModeStart(){
-	bPressedJump = false;
+	// If true, Carmen would fly up indefinitely.
+	bPressedJump = false; 
 	
 	UE_LOG(LogTemp, Warning, TEXT("FLIGHT MODE START"));
 	// Set player movement mode to Flying.
