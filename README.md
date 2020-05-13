@@ -66,8 +66,8 @@ void ACarmenCharacter::MoveForward(float amount){
 	}
 }
 ```
-Unlike ground movement, flight is not controlled by WASD. In flight, the player character automatically moves forward at a set speed, which the player can either increase or decrease by holding down the Space or Shift keys.
-
+Unlike ground movement, flight is not controlled by WASD. In flight, the player character automatically moves forward at a set speed, which the player can either increase or decrease by holding down the Space or Shift keys, as shown in the following Blueprints code. As long as the flight speed hasn't hit the minimum or maximum value, the player's flight speed either speeds up or slows down depending on input.
+![Speed change code](https://github.com/alexmhunt/cartograbirdportfolio/raw/master/speedcode.PNG)
 
 
 
