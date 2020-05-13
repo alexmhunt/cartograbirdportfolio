@@ -21,6 +21,10 @@ As a team, we determined what movement functionality I would need to implement:
 The following graph shows the architecture of Cartograbird, as well as the division of work among each of the developers. Though we made minor changes to help each other out during development, this graph is generally accurate to our workload.
 ![Graph](https://github.com/alexmhunt/cartograbirdportfolio/blob/master/graph.png?raw=true)
 
+# Mr. Wiki, I don't feel so good...
+My initial intent was to implement all of my functionality in C++. However, in an unfortunate turn of events, the Unreal C++ Wiki was deleted at the start of the project, leaving sparse online resources for C++ at best. Though I did not abandon C++ entirely, I ended up coding camera movement functionality and some flight movement using Blueprints.
+Looking back, I believe it was beneficial that I got experience in both scripting languages. They both have their uses: C++ for its performance and greater level of control, and Blueprints for its speedy compile time, visual nature, and user interface functionality.
+
 # And we have liftoff!
 When I first laid my hands on this project, I was admittedly intimidated. I thought that I would have to program a whole flight physics system from scratch. Such is possible in Unreal, but as I worked on defining the player character's movement behavior, I found that Unreal had an existing movement API: the [CharacterMovementComponent](https://docs.unrealengine.com/en-US/API/Runtime/Engine/GameFramework/UCharacterMovementComponent/index.html). 
 
@@ -49,10 +53,6 @@ void ACarmenCharacter::OnFlightModeStart(){
 
 ```
 
-# Mr. Wiki, I don't feel so good...
-My initial intent was to implement all of my functionality in C++. However, in an unfortunate turn of events, the Unreal C++ Wiki was deleted at the start of the project, leaving sparse online resources for C++ at best. Though I did not abandon C++ entirely, I ended up coding camera movement functionality and some flight movement using Blueprints.
-Looking back, I believe it was beneficial that I got experience in both scripting languages. They both have their uses: C++ for its performance and greater level of control, and Blueprints for its speedy compile time, visual nature, and user interface functionality.
-
 # Movement and Camera
 I implemented the player character's ground movement entirely in C++. In the below code, when the player wants to move forward or backward, I find out which direction is "forward" for the player and tell the player character's CharacterMovementComponent to move in that direction by however much the input binding specifies (positive values will move forward, negative values will move backward).
 ```c++
@@ -67,6 +67,9 @@ void ACarmenCharacter::MoveForward(float amount){
 }
 ```
 Unlike ground movement, flight is not controlled by WASD. In flight, the player character automatically moves forward at a set speed, which the player can either increase or decrease by holding down the Space or Shift keys.
+
+
+
 
 # Story and Dialogue
 
