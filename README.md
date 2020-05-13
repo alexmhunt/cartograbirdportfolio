@@ -73,16 +73,16 @@ Unlike ground movement, flight is not controlled by WASD. In flight, the player 
 After successfully implementing player movement, my next development hurdle was to implement a dialogue system from scratch. Without any experience in widget development, I wasn't sure what to do, but my research helped guide me to implement a simple, functional dialogue system. 
 
 I started by creating an interface "Interactable" for every interactable object to inherit. It holds one simple method: **Interact.** This allowed the player to only have one interaction implementation for multiple types of objects, such as NPCs and quest objects (in this game, plane parts.) I then created a widget for the dialogue box, with a text box bound to a variable **DialogueText.**
-[dialogue widget]
+![dialogue widget](https://github.com/alexmhunt/cartograbirdportfolio/blob/master/dialoguewindow.PNG)
 
 Below, I implemented NPC interaction. NPC implemented Interactable, and such is able to receive events whenever the player interacts with it. The Blueprints code checks to see if the player is at the appropriate quest stage and has collected all plane parts. If so, it advances quest progression, but regardless, the NPC opens up a dialogue menu.
-[interact]
-[dialogue create 1 & 2]
-
+![interact](https://github.com/alexmhunt/cartograbirdportfolio/blob/master/interact.PNG?raw=true)
+![dialogue create 1](https://github.com/alexmhunt/cartograbirdportfolio/blob/master/dialoguecreate.PNG?raw=true)
+![dialogue create 2](https://github.com/alexmhunt/cartograbirdportfolio/blob/master/dialoguecreateend.PNG?raw=true)
 
 The dialogue lines themselves are imported from a .csv file, which is then translated to a struct that the NPC can read in **Get Line.**
-[csv]
-[get line]
+![csv](https://github.com/alexmhunt/cartograbirdportfolio/blob/master/csv.PNG?raw=true)
+![get line](https://github.com/alexmhunt/cartograbirdportfolio/blob/master/getline.PNG?raw=true)
 
 I do creative writing as a hobby, and have a great passion for story, so I was excited to get my hands on implementing the game's story. Even if it was simple, I still gained valuable experience in dialogue implementation and in Blueprints scripting for widgets.
 
