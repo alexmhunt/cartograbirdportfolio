@@ -90,5 +90,6 @@ This was my first experience in Unreal, and so my first experience with version 
 
 Even after all this trouble, I still like Git, and will still use in the future. For an Unreal Engine 4 project with multiple developers, though, I'm curious to see if any alternatives such as Perforce handle Blueprint merging better.
 
-# Conclusion
+# Conclusion & Lessons Learned
 This game provided me with an invaluable development experience. I've learned a lot about using Unreal Engine 4, and feel more confident using it for future personal projects, coded in both Blueprints and C++. Additionally, I've gained a better sense for scoping games and dividing work in a fair manner amongst developers.
+My advice to those learning Unreal Engine 4: Read the documentation often! There's a chance that there will be an API that can do exactly what you want to implement. It's alright if you want to implement some functionality manually, but APIs can save a lot of time during development. Also, don't be afraid to try both Blueprints and C++ in one project!
